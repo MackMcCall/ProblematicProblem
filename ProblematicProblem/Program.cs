@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -15,6 +16,11 @@ namespace ProblematicProblem
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? \nYes? Type true: \nNo? Type false: ");
             cont = bool.Parse(Console.ReadLine());
+            if (cont == false)
+            {
+                Console.WriteLine("Thanks, have a great day!");
+                return;
+            }
             Console.WriteLine();
 
             Console.Write("We are going to need your information first! What is your name? ");
@@ -73,7 +79,7 @@ namespace ProblematicProblem
                 Console.WriteLine();
                 int randomNumber = rng.Next(activities.Count);
                 string randomActivity = activities[randomNumber];
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if (userAge < 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
