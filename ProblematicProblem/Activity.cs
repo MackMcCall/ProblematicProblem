@@ -185,11 +185,11 @@ namespace ProblematicProblem
                     randomActivity = Activities[randomNumber];
                 }
                 Console.WriteLine($"Ah got it! {userName}, your random activity is: {randomActivity}!");
-                Console.Write("Is this ok or do you want to grab another activity? Keep or Redo?: ");
-                string keepOrRedo = Console.ReadLine();
                 Console.WriteLine();
                 while (true)
                 {
+                    Console.Write("Is this ok or do you want to grab another activity? Keep or Redo?: ");
+                    string keepOrRedo = Console.ReadLine();
                     if (keepOrRedo.ToLower().Trim() == "keep")
                     {
                         cont = false;
@@ -203,6 +203,7 @@ namespace ProblematicProblem
                     else
                     {
                         Console.WriteLine("Sorry, invlaid input. Try again.");
+                        Console.WriteLine();
                     }
                 }
             }
