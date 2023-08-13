@@ -102,7 +102,6 @@ namespace ProblematicProblem
             {
                 Console.Write("Would you like to add any activities before we generate one? Yes or No?: ");
                 string addToList = Console.ReadLine();
-                Console.WriteLine();
 
                 if (addToList.ToLower().Trim() == "no")
                 {
@@ -110,12 +109,14 @@ namespace ProblematicProblem
                 }
                 else if (addToList.ToLower().Trim() == "yes")
                 {
+                    Console.WriteLine();
                     AddingToList();
                     return;
                 }
                 else
                 {
-                    Console.WriteLine("Sorry, invalid input. Try again. \n");
+                    Console.WriteLine("Sorry, invalid input. Try again.");
+                    Console.WriteLine();
                 }
             }
         }
